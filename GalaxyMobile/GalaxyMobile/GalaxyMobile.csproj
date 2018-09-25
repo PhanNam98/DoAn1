@@ -63,10 +63,28 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVIen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVIen.Designer.cs">
+      <DependentUpon>NhanVIen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\LoaiNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\LoaiNV.Designer.cs">
+      <DependentUpon>LoaiNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVIen.resx">
+      <DependentUpon>NhanVIen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\LoaiNV.resx">
+      <DependentUpon>LoaiNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
