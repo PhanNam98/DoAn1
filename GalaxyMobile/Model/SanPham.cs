@@ -38,8 +38,8 @@ namespace Model
         public string MaDSP { get; set; }
         public string NămSX { get; set; }
     
+        public virtual DongSanPham DongSanPham { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietSP> ChiTietSPs { get; set; }
-        public virtual DongSanPham DongSanPham { get; set; }
     }
 }

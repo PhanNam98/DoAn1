@@ -42,6 +42,12 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\..\..\..\..\UI\InnerVisual-Material Framework\InnerVisual-Material Framework\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\..\..\..\C#\AnimeManagerment\AnimeManagerment\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,6 +69,12 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMainServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainServer.Designer.cs">
+      <DependentUpon>frmMainServer.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVIen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +92,9 @@
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMainServer.resx">
+      <DependentUpon>frmMainServer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVIen.resx">
       <DependentUpon>NhanVIen.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +110,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Model.HSX.datasource" />
+    <None Include="Properties\DataSources\Model.KhoHang.datasource" />
+    <None Include="Properties\DataSources\Model.NhanVien.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

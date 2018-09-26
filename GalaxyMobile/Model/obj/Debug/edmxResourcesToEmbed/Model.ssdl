@@ -1,13 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="GalaxyMobileModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'GalaxyMobile.dbo.ChiTietHoaDon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="ChiTietHoaDon">
     <Key>
       <PropertyRef Name="MaHoaDon" />
       <PropertyRef Name="MaKieu" />
-      <PropertyRef Name="MaCuaHang" />
-      <PropertyRef Name="SoluongSP" />
     </Key>
     <Property Name="MaHoaDon" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="MaKieu" Type="varchar" MaxLength="50" Nullable="false" />
@@ -71,13 +67,10 @@ warning 6002: The table/view 'GalaxyMobile.dbo.ChiTietHoaDon' does not have a pr
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="SDT" Type="varchar" MaxLength="13" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'GalaxyMobile.dbo.KhoHang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="KhoHang">
     <Key>
       <PropertyRef Name="MaKieu" />
       <PropertyRef Name="MaCuaHang" />
-      <PropertyRef Name="SoLuong" />
     </Key>
     <Property Name="MaKieu" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="MaCuaHang" Type="varchar" MaxLength="10" Nullable="false" />
@@ -145,6 +138,16 @@ warning 6002: The table/view 'GalaxyMobile.dbo.KhoHang' does not have a primary 
     <Property Name="ThongTinKhac" Type="nvarchar" MaxLength="100" />
     <Property Name="MaDSP" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="NămSX" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TaiKhoan">
     <Key>
@@ -326,34 +329,22 @@ warning 6002: The table/view 'GalaxyMobile.dbo.KhoHang' does not have a primary 
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="GalaxyMobileModelStoreContainer">
+    <EntitySet Name="ChiTietHoaDon" EntityType="Self.ChiTietHoaDon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChiTietSP" EntityType="Self.ChiTietSP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CuaHang" EntityType="Self.CuaHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DongSanPham" EntityType="Self.DongSanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HSX" EntityType="Self.HSX" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhoHang" EntityType="Self.KhoHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoaiNV" EntityType="Self.LoaiNV" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoaiSP" EntityType="Self.LoaiSP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoaiTaiKhoan" EntityType="Self.LoaiTaiKhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MauSP" EntityType="Self.MauSP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ChiTietHoaDon" EntityType="Self.ChiTietHoaDon" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [ChiTietHoaDon].[MaHoaDon] AS [MaHoaDon], 
-    [ChiTietHoaDon].[MaKieu] AS [MaKieu], 
-    [ChiTietHoaDon].[MaCuaHang] AS [MaCuaHang], 
-    [ChiTietHoaDon].[SoluongSP] AS [SoluongSP]
-    FROM [dbo].[ChiTietHoaDon] AS [ChiTietHoaDon]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="KhoHang" EntityType="Self.KhoHang" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [KhoHang].[MaKieu] AS [MaKieu], 
-    [KhoHang].[MaCuaHang] AS [MaCuaHang], 
-    [KhoHang].[SoLuong] AS [SoLuong]
-    FROM [dbo].[KhoHang] AS [KhoHang]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_ChiTietHoaDon_ChiTietSP1" Association="Self.FK_ChiTietHoaDon_ChiTietSP1">
       <End Role="ChiTietSP" EntitySet="ChiTietSP" />
       <End Role="ChiTietHoaDon" EntitySet="ChiTietHoaDon" />

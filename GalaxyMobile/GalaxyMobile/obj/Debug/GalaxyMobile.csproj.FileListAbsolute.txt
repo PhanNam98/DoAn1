@@ -40,3 +40,8 @@ D:\DoAn1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csproj.CoreCompi
 D:\DoAn1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csproj.CopyComplete
 D:\DoAn1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.exe
 D:\DoAn1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.pdb
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.NhanVIen.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.LoaiNV.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmMainServer.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\bin\Debug\MaterialSkin.dll
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\bin\Debug\MetroFramework.dll

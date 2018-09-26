@@ -28,8 +28,8 @@ namespace Model
         public string HTGiaoHang { get; set; }
         public System.DateTime NgayLapHD { get; set; }
     
+        public virtual KhachHang KhachHang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
-        public virtual KhachHang KhachHang { get; set; }
     }
 }

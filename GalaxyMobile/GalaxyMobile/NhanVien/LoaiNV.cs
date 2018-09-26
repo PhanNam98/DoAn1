@@ -115,14 +115,14 @@ namespace GalaxyMobile
         {
             if (Them)
             {
-                //if (DBLoaiNV.KtLoai(txtMaLoai.Text) > 0)
-                {
-                    MessageBox.Show("Mã khách hàng tồn tai. Nhập Mã khách hàng khác !");
-                    txtMaLoai.ResetText();
-                    txtTenLoai.ResetText();
-                    txtMaLoai.Focus();
-                }
-                else
+               //if (DBLoaiNV.KtLoai(txtMaLoai.Text) > 0)
+               // {
+               //     MessageBox.Show("Mã khách hàng tồn tai. Nhập Mã khách hàng khác !");
+               //     txtMaLoai.ResetText();
+               //     txtTenLoai.ResetText();
+               //     txtMaLoai.Focus();
+               // }
+                //else
                 {
                     //decimal tien = Convert.ToDecimal(txtTien.Text);
                    // DBLoaiNV.InsertLoaiNV(txtMaLoai.Text, txtTenLoai.Text, tien);

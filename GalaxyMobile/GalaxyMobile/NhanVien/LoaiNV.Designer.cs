@@ -49,7 +49,7 @@
             // 
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSua.Location = new System.Drawing.Point(270, 181);
+            this.btnSua.Location = new System.Drawing.Point(292, 146);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(70, 32);
             this.btnSua.TabIndex = 47;
@@ -61,7 +61,7 @@
             // 
             this.btnReload.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReload.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnReload.Location = new System.Drawing.Point(270, 142);
+            this.btnReload.Location = new System.Drawing.Point(292, 107);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(70, 32);
             this.btnReload.TabIndex = 45;
@@ -73,7 +73,7 @@
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnXoa.Location = new System.Drawing.Point(270, 220);
+            this.btnXoa.Location = new System.Drawing.Point(292, 185);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(70, 32);
             this.btnXoa.TabIndex = 50;
@@ -85,7 +85,7 @@
             // 
             this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnHuy.Location = new System.Drawing.Point(368, 220);
+            this.btnHuy.Location = new System.Drawing.Point(390, 185);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(70, 32);
             this.btnHuy.TabIndex = 49;
@@ -97,7 +97,7 @@
             // 
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnLuu.Location = new System.Drawing.Point(368, 181);
+            this.btnLuu.Location = new System.Drawing.Point(390, 146);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(70, 32);
             this.btnLuu.TabIndex = 48;
@@ -118,23 +118,23 @@
             // 
             // txtTenLoai
             // 
-            this.txtTenLoai.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenLoai.Location = new System.Drawing.Point(164, 56);
+            this.txtTenLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLoai.Location = new System.Drawing.Point(164, 53);
             this.txtTenLoai.Name = "txtTenLoai";
-            this.txtTenLoai.Size = new System.Drawing.Size(213, 25);
+            this.txtTenLoai.Size = new System.Drawing.Size(213, 26);
             this.txtTenLoai.TabIndex = 5;
             // 
             // txtMaLoai
             // 
-            this.txtMaLoai.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaLoai.Location = new System.Drawing.Point(164, 16);
             this.txtMaLoai.Name = "txtMaLoai";
-            this.txtMaLoai.Size = new System.Drawing.Size(111, 25);
+            this.txtMaLoai.Size = new System.Drawing.Size(111, 26);
             this.txtMaLoai.TabIndex = 4;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(19, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 23);
@@ -143,7 +143,7 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(35, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 23);
@@ -154,7 +154,7 @@
             // 
             this.bthThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bthThoat.ForeColor = System.Drawing.Color.Red;
-            this.bthThoat.Location = new System.Drawing.Point(323, 259);
+            this.bthThoat.Location = new System.Drawing.Point(345, 224);
             this.bthThoat.Name = "bthThoat";
             this.bthThoat.Size = new System.Drawing.Size(70, 42);
             this.bthThoat.TabIndex = 51;
@@ -166,7 +166,7 @@
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnThem.Location = new System.Drawing.Point(368, 142);
+            this.btnThem.Location = new System.Drawing.Point(390, 107);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(70, 32);
             this.btnThem.TabIndex = 46;
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 338);
+            this.ClientSize = new System.Drawing.Size(499, 353);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnXoa);
