@@ -268,6 +268,8 @@
       <End Role="LoaiNV" EntitySet="LoaiNVs" />
       <End Role="NhanVien" EntitySet="NhanViens" />
     </AssociationSet>
+    <FunctionImport Name="USP_GetAllCuaHang" EntitySet="CuaHangs" ReturnType="Collection(GalaxyMobileModel.CuaHang)" />
+    <FunctionImport Name="USP_GetAllKhoHang" EntitySet="KhoHangs" ReturnType="Collection(GalaxyMobileModel.KhoHang)" />
   </EntityContainer>
   <EntityType Name="ChiTietSP">
     <Key>
@@ -430,4 +432,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="USP_GetAllCuaHang_Result">
+    <Property Type="String" Name="MaCuaHang" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="MaCuaHang1" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="DiaChi" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="USP_GetAllKhoHang_Result">
+    <Property Type="String" Name="MaCuaHang" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="MaKieu" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="SoLuong" Nullable="false" />
+  </ComplexType>
 </Schema>

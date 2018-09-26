@@ -172,5 +172,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_GetAllCuaHang" FunctionName="GalaxyMobileModel.Store.USP_GetAllCuaHang" />
+    <FunctionImportMapping FunctionImportName="USP_GetAllKhoHang" FunctionName="GalaxyMobileModel.Store.USP_GetAllKhoHang" />
   </EntityContainerMapping>
 </Mapping>

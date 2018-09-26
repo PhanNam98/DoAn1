@@ -12,6 +12,8 @@ namespace Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class GalaxyMobileEntities : DbContext
     {
@@ -41,5 +43,25 @@ namespace Model
         public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public virtual DbSet<KhoHang> KhoHangs { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
+    
+        public virtual ObjectResult<CuaHang> USP_GetAllCuaHang()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CuaHang>("USP_GetAllCuaHang");
+        }
+    
+        public virtual ObjectResult<CuaHang> USP_GetAllCuaHang(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CuaHang>("USP_GetAllCuaHang", mergeOption);
+        }
+    
+        public virtual ObjectResult<KhoHang> USP_GetAllKhoHang()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KhoHang>("USP_GetAllKhoHang");
+        }
+    
+        public virtual ObjectResult<KhoHang> USP_GetAllKhoHang(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KhoHang>("USP_GetAllKhoHang", mergeOption);
+        }
     }
 }

@@ -27,6 +27,7 @@ namespace Model
         public decimal Giá { get; set; }
         public int SoluongSP { get; set; }
         public byte[] Anh { get; set; }
+        public decimal Gia { get; set; }
     
         public virtual MauSP MauSP { get; set; }
         public virtual SanPham SanPham { get; set; }

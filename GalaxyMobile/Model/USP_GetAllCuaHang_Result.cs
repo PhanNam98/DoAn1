@@ -10,17 +10,11 @@
 namespace Model
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class ChiTietHoaDon
+    public partial class USP_GetAllCuaHang_Result
     {
-        public string MaHoaDon { get; set; }
-        public string MaKieu { get; set; }
         public string MaCuaHang { get; set; }
-        public int SoluongSP { get; set; }
-        public decimal GiaSP { get; set; }
-    
-        public virtual ChiTietSP ChiTietSP { get; set; }
-        public virtual HoaDon HoaDon { get; set; }
+        public string MaCuaHang1 { get; set; }
+        public string DiaChi { get; set; }
     }
 }

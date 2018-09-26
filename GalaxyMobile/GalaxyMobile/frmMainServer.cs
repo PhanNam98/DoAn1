@@ -18,11 +18,17 @@ namespace GalaxyMobile
             InitializeComponent();
         }
 
-     
+
         private void frmMainServer_Load(object sender, EventArgs e)
+        {
+            LoadKhoHang();
+
+        }
+        public void LoadKhoHang()
         {
             
             khoHangBindingSource.DataSource = KhoHangBUS.GetAllKHoHang();
+           
         }
     }
 }

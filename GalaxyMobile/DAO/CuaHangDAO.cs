@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using Model;
 namespace DAO
 {
-    public class KhoHangDAO
+    public class CuaHangDAO
     {
-        public List<KhoHang> GetAllKhoHang()
+        public List<CuaHang> GetAllCuaHang()
         {
             using (GalaxyMobileEntities db = new GalaxyMobileEntities())
             {
-                return db.USP_GetAllKhoHang().ToList();
+                return db.USP_GetAllCuaHang().ToList();
             }
         }
     }
