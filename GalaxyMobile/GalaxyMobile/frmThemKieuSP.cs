@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GalaxyMobile
 {
-    public partial class ChiTietSanPham : Form
+    public partial class frmThemKieuSP : Form
     {
-        public ChiTietSanPham()
+        public frmThemKieuSP()
         {
             InitializeComponent();
         }

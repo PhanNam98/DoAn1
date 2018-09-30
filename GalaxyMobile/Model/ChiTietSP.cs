@@ -24,15 +24,14 @@ namespace Model
         public string MaSP { get; set; }
         public string MaKieu { get; set; }
         public string MaMau { get; set; }
-        public decimal Giá { get; set; }
+        public decimal Gia { get; set; }
         public int SoluongSP { get; set; }
         public byte[] Anh { get; set; }
-        public decimal Gia { get; set; }
     
-        public virtual MauSP MauSP { get; set; }
-        public virtual SanPham SanPham { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietHoaDon> ChiTietHoaDons { get; set; }
+        public virtual MauSP MauSP { get; set; }
+        public virtual SanPham SanPham { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KhoHang> KhoHangs { get; set; }
     }

@@ -18,7 +18,7 @@ namespace Model
         public string MaCuaHang { get; set; }
         public int SoLuong { get; set; }
     
-        public virtual ChiTietSP ChiTietSP { get; set; }
         public virtual CuaHang CuaHang { get; set; }
+        public virtual ChiTietSP ChiTietSP { get; set; }
     }
 }

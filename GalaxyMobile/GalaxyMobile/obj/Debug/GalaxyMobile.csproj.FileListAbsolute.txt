@@ -45,4 +45,7 @@ D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\D
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmMainServer.resources
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\bin\Debug\MaterialSkin.dll
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\bin\Debug\MetroFramework.dll
-D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.ChiTietSanPham.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmChiTietSanPham.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmThemKieuSP.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmThemMau.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmPhanChiaSP.resources

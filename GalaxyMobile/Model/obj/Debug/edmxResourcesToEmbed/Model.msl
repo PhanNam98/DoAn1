@@ -116,18 +116,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ChiTietSPs">
-      <EntityTypeMapping TypeName="GalaxyMobileModel.ChiTietSP">
-        <MappingFragment StoreEntitySet="ChiTietSP">
-          <ScalarProperty Name="Anh" ColumnName="Anh" />
-          <ScalarProperty Name="SoluongSP" ColumnName="SoluongSP" />
-          <ScalarProperty Name="Giá" ColumnName="Giá" />
-          <ScalarProperty Name="MaMau" ColumnName="MaMau" />
-          <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="GalaxyMobileModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -142,6 +130,7 @@
     <EntitySetMapping Name="ChiTietHoaDons">
       <EntityTypeMapping TypeName="GalaxyMobileModel.ChiTietHoaDon">
         <MappingFragment StoreEntitySet="ChiTietHoaDon">
+          <ScalarProperty Name="GiaSP" ColumnName="GiaSP" />
           <ScalarProperty Name="SoluongSP" ColumnName="SoluongSP" />
           <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
           <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
@@ -174,5 +163,17 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="USP_GetAllCuaHang" FunctionName="GalaxyMobileModel.Store.USP_GetAllCuaHang" />
     <FunctionImportMapping FunctionImportName="USP_GetAllKhoHang" FunctionName="GalaxyMobileModel.Store.USP_GetAllKhoHang" />
+    <EntitySetMapping Name="ChiTietSPs">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.ChiTietSP">
+        <MappingFragment StoreEntitySet="ChiTietSP">
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+          <ScalarProperty Name="SoluongSP" ColumnName="SoluongSP" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="MaMau" ColumnName="MaMau" />
+          <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

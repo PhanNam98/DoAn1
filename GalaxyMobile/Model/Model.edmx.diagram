@@ -22,19 +22,19 @@
         <AssociationConnector Association="GalaxyMobileModel.FK_SanPham_DongSanPham" ManuallyRouted="false" />
         <AssociationConnector Association="GalaxyMobileModel.FK_HoaDon_KhachHang" ManuallyRouted="false" />
         <AssociationConnector Association="GalaxyMobileModel.FK_TaiKhoan_LoaiTaiKhoan" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="GalaxyMobileModel.ChiTietSP" Width="1.5" PointX="7.875" PointY="3" />
         <EntityTypeShape EntityType="GalaxyMobileModel.sysdiagram" Width="1.5" PointX="0.75" PointY="6.75" />
-        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietSP_MauSP" />
-        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietSP_SanPham" />
         <EntityTypeShape EntityType="GalaxyMobileModel.ChiTietHoaDon" Width="1.5" PointX="13.125" PointY="4.5" />
         <EntityTypeShape EntityType="GalaxyMobileModel.KhoHang" Width="1.5" PointX="10.125" PointY="4.375" />
-        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietHoaDon_ChiTietSP1" />
         <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietHoaDon_HoaDon1" />
-        <AssociationConnector Association="GalaxyMobileModel.FK_KhoHang_ChiTietSP" />
         <AssociationConnector Association="GalaxyMobileModel.FK_KhoHang_CuaHang" />
         <EntityTypeShape EntityType="GalaxyMobileModel.NhanVien" Width="1.5" PointX="9.75" PointY="7.625" />
         <AssociationConnector Association="GalaxyMobileModel.FK_NhanVien_CuaHang" />
         <AssociationConnector Association="GalaxyMobileModel.FK_NhanVien_LoaiNV" />
+        <EntityTypeShape EntityType="GalaxyMobileModel.ChiTietSP" Width="1.5" PointX="7.5" PointY="3" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietHoaDon_ChiTietSP1" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietSP_MauSP" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_ChiTietSP_SanPham" />
+        <AssociationConnector Association="GalaxyMobileModel.FK_KhoHang_ChiTietSP" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

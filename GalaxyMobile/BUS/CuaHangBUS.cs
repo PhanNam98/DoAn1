@@ -18,5 +18,9 @@ namespace BUS
         {
             return db.GetAllCuaHang();
         }
+        public static KhoHang GetMaKieuByMaCH(string id, string makieu)
+        {
+            return db.GetMaKieuByMaCH(id, makieu);
+        }
     }
 }

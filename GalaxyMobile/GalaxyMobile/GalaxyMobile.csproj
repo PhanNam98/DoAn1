@@ -63,11 +63,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChiTietSanPham.cs">
+    <Compile Include="frmChiTietSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChiTietSanPham.Designer.cs">
-      <DependentUpon>ChiTietSanPham.cs</DependentUpon>
+    <Compile Include="frmChiTietSanPham.Designer.cs">
+      <DependentUpon>frmChiTietSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -80,6 +80,24 @@
     </Compile>
     <Compile Include="frmMainServer.Designer.cs">
       <DependentUpon>frmMainServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhanChiaSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhanChiaSP.Designer.cs">
+      <DependentUpon>frmPhanChiaSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemKieuSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemKieuSP.Designer.cs">
+      <DependentUpon>frmThemKieuSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemMau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemMau.Designer.cs">
+      <DependentUpon>frmThemMau.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVIen.cs">
       <SubType>Form</SubType>
@@ -95,14 +113,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ChiTietSanPham.resx">
-      <DependentUpon>ChiTietSanPham.cs</DependentUpon>
+    <EmbeddedResource Include="frmChiTietSanPham.resx">
+      <DependentUpon>frmChiTietSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainServer.resx">
       <DependentUpon>frmMainServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhanChiaSP.resx">
+      <DependentUpon>frmPhanChiaSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemKieuSP.resx">
+      <DependentUpon>frmThemKieuSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemMau.resx">
+      <DependentUpon>frmThemMau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVIen.resx">
       <DependentUpon>NhanVIen.cs</DependentUpon>
@@ -119,7 +146,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\Model.ChiTietSP.datasource" />
     <None Include="Properties\DataSources\Model.CuaHang.datasource" />
+    <None Include="Properties\DataSources\Model.DongSanPham.datasource" />
     <None Include="Properties\DataSources\Model.HSX.datasource" />
     <None Include="Properties\DataSources\Model.KhoHang.datasource" />
     <None Include="Properties\DataSources\Model.NhanVien.datasource" />

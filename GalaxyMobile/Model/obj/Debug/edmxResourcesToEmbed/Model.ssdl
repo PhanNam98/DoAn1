@@ -9,6 +9,7 @@
     <Property Name="MaKieu" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="MaCuaHang" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="SoluongSP" Type="int" Nullable="false" />
+    <Property Name="GiaSP" Type="decimal" Precision="18" Scale="2" Nullable="false" />
   </EntityType>
   <EntityType Name="ChiTietSP">
     <Key>
@@ -17,7 +18,7 @@
     <Property Name="MaSP" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="MaKieu" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="MaMau" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="Giá" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Gia" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="SoluongSP" Type="int" Nullable="false" />
     <Property Name="Anh" Type="image" />
   </EntityType>

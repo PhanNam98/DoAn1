@@ -20,7 +20,7 @@ namespace Model
         public int SoluongSP { get; set; }
         public decimal GiaSP { get; set; }
     
-        public virtual ChiTietSP ChiTietSP { get; set; }
         public virtual HoaDon HoaDon { get; set; }
+        public virtual ChiTietSP ChiTietSP { get; set; }
     }
 }
