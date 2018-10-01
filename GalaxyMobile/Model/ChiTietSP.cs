@@ -24,7 +24,7 @@ namespace Model
         public string MaSP { get; set; }
         public string MaKieu { get; set; }
         public string MaMau { get; set; }
-        public decimal Giá { get; set; }
+        public decimal Gia { get; set; }
         public int SoluongSP { get; set; }
         public byte[] Anh { get; set; }
     

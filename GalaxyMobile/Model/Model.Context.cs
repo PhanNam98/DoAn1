@@ -27,7 +27,6 @@ namespace Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ChiTietSP> ChiTietSPs { get; set; }
         public virtual DbSet<CuaHang> CuaHangs { get; set; }
         public virtual DbSet<DongSanPham> DongSanPhams { get; set; }
         public virtual DbSet<HoaDon> HoaDons { get; set; }
@@ -37,11 +36,12 @@ namespace Model
         public virtual DbSet<LoaiSP> LoaiSPs { get; set; }
         public virtual DbSet<LoaiTaiKhoan> LoaiTaiKhoans { get; set; }
         public virtual DbSet<MauSP> MauSPs { get; set; }
-        public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public virtual DbSet<KhoHang> KhoHangs { get; set; }
+<<<<<<< HEAD
     
         public virtual ObjectResult<LoaiNV> GetLNV()
         {
@@ -51,6 +51,29 @@ namespace Model
         public virtual ObjectResult<LoaiNV> GetLNV(MergeOption mergeOption)
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoaiNV>("GetLNV", mergeOption);
+=======
+        public virtual DbSet<NhanVien> NhanViens { get; set; }
+        public virtual DbSet<ChiTietSP> ChiTietSPs { get; set; }
+    
+        public virtual ObjectResult<CuaHang> USP_GetAllCuaHang()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CuaHang>("USP_GetAllCuaHang");
+        }
+    
+        public virtual ObjectResult<CuaHang> USP_GetAllCuaHang(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CuaHang>("USP_GetAllCuaHang", mergeOption);
+        }
+    
+        public virtual ObjectResult<KhoHang> USP_GetAllKhoHang()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KhoHang>("USP_GetAllKhoHang");
+        }
+    
+        public virtual ObjectResult<KhoHang> USP_GetAllKhoHang(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KhoHang>("USP_GetAllKhoHang", mergeOption);
+>>>>>>> 8cb2876fce58988653618626d5e4c5842e82c80f
         }
     }
 }

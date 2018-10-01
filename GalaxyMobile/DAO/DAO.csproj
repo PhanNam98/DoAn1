@@ -46,9 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="LoaiNVDAO.cs" />
     <Compile Include="NhanVienDAO.cs" />
+=======
+    <Compile Include="CuaHangDAO.cs" />
+    <Compile Include="DongSanPhamDAO.cs" />
+    <Compile Include="KhoHangDAO.cs" />
+>>>>>>> 8cb2876fce58988653618626d5e4c5842e82c80f
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SanPhamDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

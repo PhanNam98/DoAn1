@@ -120,6 +120,7 @@ namespace GalaxyMobile
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             //if (Them)
             //{
             //    //if (DBLoaiNV.KtLoai(txtMaLoai.Text) > 0)
@@ -141,6 +142,29 @@ namespace GalaxyMobile
             //else
             //{
             //    int r = dgvLoaiNV.CurrentCell.RowIndex;
+=======
+            if (Them)
+            {
+               //if (DBLoaiNV.KtLoai(txtMaLoai.Text) > 0)
+               // {
+               //     MessageBox.Show("Mã khách hàng tồn tai. Nhập Mã khách hàng khác !");
+               //     txtMaLoai.ResetText();
+               //     txtTenLoai.ResetText();
+               //     txtMaLoai.Focus();
+               // }
+                //else
+                {
+                    //decimal tien = Convert.ToDecimal(txtTien.Text);
+                   // DBLoaiNV.InsertLoaiNV(txtMaLoai.Text, txtTenLoai.Text, tien);
+                    LoadData();
+                    // Thông báo
+                    MessageBox.Show("Đã thêm xong!");
+                }
+            }
+            else
+            {
+                int r = dgvLoaiNV.CurrentCell.RowIndex;
+>>>>>>> 8cb2876fce58988653618626d5e4c5842e82c80f
 
             //    string strMA =
             //    dgvLoaiNV.Rows[r].Cells[0].Value.ToString();
