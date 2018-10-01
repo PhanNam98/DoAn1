@@ -50,17 +50,17 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.bthThoat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvNV = new System.Windows.Forms.DataGridView();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCuaHang = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.MaLoaiNV = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.GioiTinh = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.MaCuaHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLoaiNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
             this.SuspendLayout();
             // 
             // btnXoa
@@ -73,6 +73,7 @@
             this.btnXoa.TabIndex = 51;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // panel
             // 
@@ -280,10 +281,10 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvNV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNV,
             this.TenNV,
             this.MaCuaHang,
@@ -292,10 +293,10 @@
             this.DiaChi,
             this.SDT,
             this.Luong});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 159);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(864, 250);
-            this.dataGridView1.TabIndex = 52;
+            this.dgvNV.Location = new System.Drawing.Point(75, 159);
+            this.dgvNV.Name = "dgvNV";
+            this.dgvNV.Size = new System.Drawing.Size(801, 172);
+            this.dgvNV.TabIndex = 52;
             // 
             // MaNV
             // 
@@ -317,18 +318,24 @@
             this.MaCuaHang.DataPropertyName = "MaCuaHang";
             this.MaCuaHang.HeaderText = "Thuộc cửa hàng";
             this.MaCuaHang.Name = "MaCuaHang";
+            this.MaCuaHang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MaCuaHang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // MaLoaiNV
             // 
             this.MaLoaiNV.DataPropertyName = "MaLoaiNV";
             this.MaLoaiNV.HeaderText = "Loại NV";
             this.MaLoaiNV.Name = "MaLoaiNV";
+            this.MaLoaiNV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MaLoaiNV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // GioiTinh
             // 
             this.GioiTinh.DataPropertyName = "GioiTinh";
             this.GioiTinh.HeaderText = "Giới tính";
             this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.GioiTinh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.GioiTinh.Width = 70;
             // 
             // DiaChi
@@ -355,7 +362,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvNV);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.btnSua);
@@ -366,9 +373,10 @@
             this.Controls.Add(this.btnThem);
             this.Name = "NhanVIen";
             this.Text = "NhanVIen";
+            this.Load += new System.EventHandler(this.NhanVIen_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,12 +405,12 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button bthThoat;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
-        private System.Windows.Forms.DataGridViewComboBoxColumn MaCuaHang;
-        private System.Windows.Forms.DataGridViewComboBoxColumn MaLoaiNV;
-        private System.Windows.Forms.DataGridViewComboBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaCuaHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Luong;

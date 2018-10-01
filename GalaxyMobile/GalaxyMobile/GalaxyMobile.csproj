@@ -155,6 +155,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+
+    <None Include="Properties\DataSources\Model.LoaiNV.datasource" />
+
     <None Include="Properties\DataSources\Model.ChiTietSP.datasource" />
     <None Include="Properties\DataSources\Model.CuaHang.datasource" />
     <None Include="Properties\DataSources\Model.DongSanPham.datasource" />
@@ -163,6 +166,7 @@
     <None Include="Properties\DataSources\Model.KhoHang.datasource" />
     <None Include="Properties\DataSources\Model.NhanVien.datasource" />
     <None Include="Properties\DataSources\Model.SanPham.datasource" />
+
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -41,6 +41,18 @@ namespace Model
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public virtual DbSet<KhoHang> KhoHangs { get; set; }
+
+    
+        public virtual ObjectResult<LoaiNV> GetLNV()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoaiNV>("GetLNV");
+        }
+
+        public virtual ObjectResult<LoaiNV> GetLNV(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoaiNV>("GetLNV", mergeOption);
+        }
+
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<ChiTietSP> ChiTietSPs { get; set; }
     
@@ -62,6 +74,7 @@ namespace Model
         public virtual ObjectResult<KhoHang> USP_GetAllKhoHang(MergeOption mergeOption)
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KhoHang>("USP_GetAllKhoHang", mergeOption);
+
         }
     }
 }
