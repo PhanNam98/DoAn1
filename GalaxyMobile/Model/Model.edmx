@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GalaxyMobileModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GalaxyMobileModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'GalaxyMobile.dbo.ChiTietHoaDon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ChiTietHoaDon">
@@ -330,6 +330,7 @@ warning 6002: The table/view 'GalaxyMobile.dbo.KhoHang' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="GetLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="GalaxyMobileModelStoreContainer">
           <EntitySet Name="ChiTietSP" EntityType="Self.ChiTietSP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CuaHang" EntityType="Self.CuaHang" Schema="dbo" store:Type="Tables" />
@@ -416,8 +417,7 @@ warning 6002: The table/view 'GalaxyMobile.dbo.KhoHang' does not have a primary 
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GalaxyMobileModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -842,7 +842,12 @@ warning 6002: The table/view 'GalaxyMobile.dbo.KhoHang' does not have a primary 
             <End Role="LoaiTaiKhoan" EntitySet="LoaiTaiKhoans" />
             <End Role="TaiKhoan" EntitySet="TaiKhoans" />
           </AssociationSet>
+          <FunctionImport Name="GetLNV" EntitySet="LoaiNVs" ReturnType="Collection(GalaxyMobileModel.LoaiNV)" />
         </EntityContainer>
+        <ComplexType Name="GetLNV_Result">
+          <Property Type="String" Name="MaLoaiNV" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="TenLoaiNV" Nullable="true" MaxLength="20" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1009,6 +1014,7 @@ warning 6002: The table/view 'GalaxyMobile.dbo.KhoHang' does not have a primary 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetLNV" FunctionName="GalaxyMobileModel.Store.GetLNV" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

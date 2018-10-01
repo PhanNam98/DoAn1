@@ -12,6 +12,8 @@ namespace Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class GalaxyMobileEntities : DbContext
     {
@@ -40,5 +42,15 @@ namespace Model
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public virtual DbSet<KhoHang> KhoHangs { get; set; }
+    
+        public virtual ObjectResult<LoaiNV> GetLNV()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoaiNV>("GetLNV");
+        }
+    
+        public virtual ObjectResult<LoaiNV> GetLNV(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LoaiNV>("GetLNV", mergeOption);
+        }
     }
 }

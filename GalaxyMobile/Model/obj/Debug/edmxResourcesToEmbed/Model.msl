@@ -161,5 +161,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetLNV" FunctionName="GalaxyMobileModel.Store.GetLNV" />
   </EntityContainerMapping>
 </Mapping>

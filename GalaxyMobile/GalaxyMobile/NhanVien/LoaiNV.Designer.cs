@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -41,8 +42,12 @@
             this.bthThoat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvLoaiNV = new System.Windows.Forms.DataGridView();
+            this.loaiNVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.maLoaiNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLoaiNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiNV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiNVBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSua
@@ -176,12 +181,33 @@
             // 
             // dgvLoaiNV
             // 
+            this.dgvLoaiNV.AutoGenerateColumns = false;
             this.dgvLoaiNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLoaiNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maLoaiNVDataGridViewTextBoxColumn,
+            this.tenLoaiNVDataGridViewTextBoxColumn});
+            this.dgvLoaiNV.DataSource = this.loaiNVBindingSource;
             this.dgvLoaiNV.Location = new System.Drawing.Point(12, 107);
             this.dgvLoaiNV.Name = "dgvLoaiNV";
             this.dgvLoaiNV.Size = new System.Drawing.Size(252, 210);
             this.dgvLoaiNV.TabIndex = 43;
             this.dgvLoaiNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiNV_CellClick);
+            // 
+            // loaiNVBindingSource
+            // 
+            this.loaiNVBindingSource.DataSource = typeof(Model.LoaiNV);
+            // 
+            // maLoaiNVDataGridViewTextBoxColumn
+            // 
+            this.maLoaiNVDataGridViewTextBoxColumn.DataPropertyName = "MaLoaiNV";
+            this.maLoaiNVDataGridViewTextBoxColumn.HeaderText = "MaLoaiNV";
+            this.maLoaiNVDataGridViewTextBoxColumn.Name = "maLoaiNVDataGridViewTextBoxColumn";
+            // 
+            // tenLoaiNVDataGridViewTextBoxColumn
+            // 
+            this.tenLoaiNVDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiNV";
+            this.tenLoaiNVDataGridViewTextBoxColumn.HeaderText = "TenLoaiNV";
+            this.tenLoaiNVDataGridViewTextBoxColumn.Name = "tenLoaiNVDataGridViewTextBoxColumn";
             // 
             // LoaiNV
             // 
@@ -199,9 +225,11 @@
             this.Controls.Add(this.dgvLoaiNV);
             this.Name = "LoaiNV";
             this.Text = "LoaiNV";
+            this.Load += new System.EventHandler(this.LoaiNV_Load);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiNV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaiNVBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,5 +249,8 @@
         private System.Windows.Forms.Button bthThoat;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvLoaiNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maLoaiNVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenLoaiNVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource loaiNVBindingSource;
     }
 }

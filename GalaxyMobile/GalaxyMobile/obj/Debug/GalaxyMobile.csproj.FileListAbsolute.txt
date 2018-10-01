@@ -40,3 +40,5 @@ D:\DoAn1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csproj.CoreCompi
 D:\DoAn1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.csproj.CopyComplete
 D:\DoAn1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.exe
 D:\DoAn1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.pdb
+D:\DoAn1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.NhanVIen.resources
+D:\DoAn1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.LoaiNV.resources

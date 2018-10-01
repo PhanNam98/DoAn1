@@ -63,6 +63,9 @@
     <Compile Include="DongSanPham.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="GetLNV_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="HoaDon.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

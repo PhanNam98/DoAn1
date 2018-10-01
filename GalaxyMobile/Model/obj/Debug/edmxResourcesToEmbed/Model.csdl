@@ -421,5 +421,10 @@
       <End Role="LoaiTaiKhoan" EntitySet="LoaiTaiKhoans" />
       <End Role="TaiKhoan" EntitySet="TaiKhoans" />
     </AssociationSet>
+    <FunctionImport Name="GetLNV" EntitySet="LoaiNVs" ReturnType="Collection(GalaxyMobileModel.LoaiNV)" />
   </EntityContainer>
+  <ComplexType Name="GetLNV_Result">
+    <Property Type="String" Name="MaLoaiNV" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="TenLoaiNV" Nullable="true" MaxLength="20" />
+  </ComplexType>
 </Schema>

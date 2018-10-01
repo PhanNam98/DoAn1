@@ -325,6 +325,7 @@ warning 6002: The table/view 'GalaxyMobile.dbo.KhoHang' does not have a primary 
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="GetLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="GalaxyMobileModelStoreContainer">
     <EntitySet Name="ChiTietSP" EntityType="Self.ChiTietSP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CuaHang" EntityType="Self.CuaHang" Schema="dbo" store:Type="Tables" />
