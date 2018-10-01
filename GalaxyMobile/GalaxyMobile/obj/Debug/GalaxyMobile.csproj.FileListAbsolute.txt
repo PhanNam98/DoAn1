@@ -49,3 +49,4 @@ D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\D
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmThemKieuSP.resources
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmThemMau.resources
 D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmPhanChiaSP.resources
+D:\1.NAM JOKER\Bai tap\Đồ án 1\Do An 1\DoAn1\GalaxyMobile\GalaxyMobile\obj\Debug\GalaxyMobile.frmMainClient.resources

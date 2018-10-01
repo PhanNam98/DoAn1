@@ -13,12 +13,13 @@ namespace GalaxyMobile
 {
     public partial class frmMainServer : Form
     {
-        public frmMainServer()
+        public frmMainServer(string username,int matruycap)
         {
             InitializeComponent();
         }
 
-
+        private TaiKhoan User;
+        private int MaTruyCap;
         private void frmMainServer_Load(object sender, EventArgs e)
         {
             LoadKhoHang();
@@ -62,6 +63,17 @@ namespace GalaxyMobile
         {
 
         }
+        private void dgvKhoHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int r = dgvKhoHang.CurrentCell.RowIndex;
+                string id = dgvKhoHang.Rows[r].Cells[0].Value.ToString();
+                
+                MessageBox.Show(id);
+            }
+            catch { }
+        }
         #endregion
 
 
@@ -91,6 +103,10 @@ namespace GalaxyMobile
         {
            
         }
+        private void dgvSP_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         #endregion
 
 
@@ -114,7 +130,13 @@ namespace GalaxyMobile
 
 
 
+
         #endregion
+
+        private void pnlMainServer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
        
     }
