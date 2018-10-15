@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
+
 namespace GalaxyMobile
 {
     public partial class LoaiNV : Form
@@ -16,17 +16,10 @@ namespace GalaxyMobile
         public LoaiNV()
         {
             InitializeComponent();
-            LoadData();
         }
         void LoadData()
         {
-            loaiNVBindingSource.DataSource = LoaiNVBU.GetAll();
-           // dgvLoaiNV.DataSource = LoaiNVBU.GetAll();
-            //dgvLoaiNV_DataError(null,null);
-        }
-        private void dgvLoaiNV_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            e.Cancel = true;
+
         }
         private void dgvLoaiNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -120,29 +113,6 @@ namespace GalaxyMobile
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
-            //if (Them)
-            //{
-            //    //if (DBLoaiNV.KtLoai(txtMaLoai.Text) > 0)
-            //    {
-            //        MessageBox.Show("Mã khách hàng tồn tai. Nhập Mã khách hàng khác !");
-            //        txtMaLoai.ResetText();
-            //        txtTenLoai.ResetText();
-            //        txtMaLoai.Focus();
-            //    }
-            //    else
-            //    {
-            //        //decimal tien = Convert.ToDecimal(txtTien.Text);
-            //       // DBLoaiNV.InsertLoaiNV(txtMaLoai.Text, txtTenLoai.Text, tien);
-            //        LoadData();
-            //        // Thông báo
-            //        MessageBox.Show("Đã thêm xong!");
-            //    }
-            //}
-            //else
-            //{
-            //    int r = dgvLoaiNV.CurrentCell.RowIndex;
-
             if (Them)
             {
                //if (DBLoaiNV.KtLoai(txtMaLoai.Text) > 0)
@@ -165,14 +135,13 @@ namespace GalaxyMobile
             {
                 int r = dgvLoaiNV.CurrentCell.RowIndex;
 
-
-            //    string strMA =
-            //    dgvLoaiNV.Rows[r].Cells[0].Value.ToString();
-            //    //decimal tien = Convert.ToDecimal(txtTien.Text);
-            //    //DBLoaiNV.UpdateLoaiNV(strMA, txtTenLoai.Text, tien);
-            //    LoadData();
-            //    // Thông báo 
-            //    MessageBox.Show("Đã sửa xong!");
+                string strMA =
+                dgvLoaiNV.Rows[r].Cells[0].Value.ToString();
+                //decimal tien = Convert.ToDecimal(txtTien.Text);
+                //DBLoaiNV.UpdateLoaiNV(strMA, txtTenLoai.Text, tien);
+                LoadData();
+                // Thông báo 
+                MessageBox.Show("Đã sửa xong!");
             }
         }
 
@@ -185,11 +154,6 @@ namespace GalaxyMobile
             MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             // Kiểm tra có nhắp chọn nút Ok không? 
             if (traloi == DialogResult.OK) this.Close();
-        }
-
-        private void LoaiNV_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

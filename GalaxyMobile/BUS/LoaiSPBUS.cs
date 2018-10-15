@@ -7,17 +7,16 @@ using Model;
 using DAO;
 namespace BUS
 {
-    public class LoaiNVBU
+    public class LoaiSPBUS
     {
-        static LoaiNVDAO lnv;
-        static LoaiNVBU()
+        static LoaiSPDAO db;
+        static LoaiSPBUS()
         {
-            lnv = new LoaiNVDAO();
+            db = new LoaiSPDAO();
         }
-        static public List<LoaiNV> GetAll()
+        public static List<LoaiSP> GetAllLoaiSP()
         {
-            return lnv.GetAll();
+            return db.GetLoaiSP();
         }
-
     }
 }

@@ -17,9 +17,7 @@ namespace GalaxyMobile
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            
-
-            Application.Run(new frmMainServer("1",0));
+            Application.Run(new frmDangNhap());
 
         }
     }

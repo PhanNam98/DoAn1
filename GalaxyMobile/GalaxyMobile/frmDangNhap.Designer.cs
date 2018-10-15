@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDangNhap));
             this.label1 = new System.Windows.Forms.Label();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUser = new Bunifu.Framework.UI.BunifuTextbox();
             this.txtPass = new Bunifu.Framework.UI.BunifuTextbox();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Ravie", 26.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Green;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(87, 128);
@@ -55,10 +57,10 @@
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnDangNhap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnDangNhap.Location = new System.Drawing.Point(65, 416);
+            this.btnDangNhap.Location = new System.Drawing.Point(76, 408);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(186, 44);
-            this.btnDangNhap.TabIndex = 9;
+            this.btnDangNhap.TabIndex = 8;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
@@ -78,10 +80,10 @@
             // 
             // txtUser
             // 
-            this.txtUser.BackColor = System.Drawing.Color.DimGray;
+            this.txtUser.BackColor = System.Drawing.Color.White;
             this.txtUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtUser.BackgroundImage")));
             this.txtUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.txtUser.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txtUser.ForeColor = System.Drawing.Color.Black;
             this.txtUser.Icon = ((System.Drawing.Image)(resources.GetObject("txtUser.Icon")));
             this.txtUser.Location = new System.Drawing.Point(28, 221);
             this.txtUser.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -92,20 +94,28 @@
             // 
             // txtPass
             // 
-            this.txtPass.BackColor = System.Drawing.Color.DimGray;
+            this.txtPass.BackColor = System.Drawing.Color.White;
             this.txtPass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPass.BackgroundImage")));
             this.txtPass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.txtPass.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txtPass.ForeColor = System.Drawing.Color.Black;
             this.txtPass.Icon = ((System.Drawing.Image)(resources.GetObject("txtPass.Icon")));
             this.txtPass.Location = new System.Drawing.Point(28, 302);
             this.txtPass.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(297, 40);
-            this.txtPass.TabIndex = 11;
+            this.txtPass.TabIndex = 7;
             this.txtPass.text = "User Name";
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this;
+            this.bunifuDragControl1.Vertical = true;
             // 
             // frmDangNhap
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -119,6 +129,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -133,6 +144,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuTextbox txtUser;
         private Bunifu.Framework.UI.BunifuTextbox txtPass;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
 

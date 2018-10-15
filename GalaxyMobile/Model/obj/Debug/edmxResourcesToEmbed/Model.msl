@@ -106,16 +106,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TaiKhoans">
-      <EntityTypeMapping TypeName="GalaxyMobileModel.TaiKhoan">
-        <MappingFragment StoreEntitySet="TaiKhoan">
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
-          <ScalarProperty Name="MaLoaiTK" ColumnName="MaLoaiTK" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="GalaxyMobileModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -172,6 +162,54 @@
           <ScalarProperty Name="MaMau" ColumnName="MaMau" />
           <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaiKhoans">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.TaiKhoan">
+        <MappingFragment StoreEntitySet="TaiKhoan">
+          <ScalarProperty Name="MaLoaiTK" ColumnName="MaLoaiTK" />
+          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetLNV" FunctionName="GalaxyMobileModel.Store.GetLNV" />
+    <FunctionImportMapping FunctionImportName="spThemNV" FunctionName="GalaxyMobileModel.Store.spThemNV" />
+    <FunctionImportMapping FunctionImportName="updateNV" FunctionName="GalaxyMobileModel.Store.updateNV" />
+    <FunctionImportMapping FunctionImportName="delNV" FunctionName="GalaxyMobileModel.Store.delNV" />
+    <FunctionImportMapping FunctionImportName="spDelKH" FunctionName="GalaxyMobileModel.Store.spDelKH" />
+    <FunctionImportMapping FunctionImportName="spInsertKH" FunctionName="GalaxyMobileModel.Store.spInsertKH" />
+    <FunctionImportMapping FunctionImportName="spUpdateKH" FunctionName="GalaxyMobileModel.Store.spUpdateKH" />
+    <FunctionImportMapping FunctionImportName="spGetKH" FunctionName="GalaxyMobileModel.Store.spGetKH" />
+    <EntitySetMapping Name="ChiTietHDNhapHangs">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.ChiTietHDNhapHang">
+        <MappingFragment StoreEntitySet="ChiTietHDNhapHang">
+          <ScalarProperty Name="GiaNSX" ColumnName="GiaNSX" />
+          <ScalarProperty Name="SoLuongNhap" ColumnName="SoLuongNhap" />
+          <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
+          <ScalarProperty Name="MaHoaDonNH" ColumnName="MaHoaDonNH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiaoHangs">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.GiaoHang">
+        <MappingFragment StoreEntitySet="GiaoHang">
+          <ScalarProperty Name="TinhTrangGH" ColumnName="TinhTrangGH" />
+          <ScalarProperty Name="NgayGiaoHang" ColumnName="NgayGiaoHang" />
+          <ScalarProperty Name="MaNVGH" ColumnName="MaNVGH" />
+          <ScalarProperty Name="MaCuaHang" ColumnName="MaCuaHang" />
+          <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoaDonNhapHangs">
+      <EntityTypeMapping TypeName="GalaxyMobileModel.HoaDonNhapHang">
+        <MappingFragment StoreEntitySet="HoaDonNhapHang">
+          <ScalarProperty Name="NgayNhapHang" ColumnName="NgayNhapHang" />
+          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="MaHoaDonNH" ColumnName="MaHoaDonNH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
