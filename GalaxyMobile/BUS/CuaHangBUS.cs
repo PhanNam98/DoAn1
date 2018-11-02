@@ -14,6 +14,10 @@ namespace BUS
         {
             db = new CuaHangDAO();
         }
+        public static List<CuaHang> GetCuaHangChiNhanh()
+        {
+            return db.GetCuaHangChiNhanh();
+        }
         public static List<CuaHang> GetAllCuaHang()
         {
             return db.GetAllCuaHang();
@@ -25,6 +29,18 @@ namespace BUS
         public static CuaHang GetThongTinCuaHang(string mach)
         {
             return db.GetThongTinCuaHang(mach);
+        }
+        public static void ThemCH(CuaHang ch)
+        {
+            db.ThemCH(ch);
+        }
+        public static void XoaCH(CuaHang ch)
+        {
+            db.XoaCH(ch);
+        }
+        public static void SuaCH(CuaHang ch)
+        {
+            db.SuaCH(ch);
         }
     }
 }

@@ -29,6 +29,7 @@ namespace GalaxyMobile
             // TODO: This line of code loads data into the 'galaxyMobileDataSet1.KhachHang' table. You can move, or remove it, as needed.
             //this.khachHangTableAdapter.Fill(this.galaxyMobileDataSet1.KhachHang);
             PhanQuyen();
+            LoadHD();
             CH = CuaHangBUS.GetThongTinCuaHang(User.MaCuaHang);
             this.Text = CH.TenCuaHang;
         }
@@ -42,10 +43,27 @@ namespace GalaxyMobile
         #endregion
 
         #region methods
+        void LoadHD()
+        {
+            dateTimePickerDen.Value = DateTime.Now;
+            dateTimePickerTu.Value = DateTime.Now.AddMonths(-1);
+            dateTimePickerTu.MaxDate = DateTime.Now.AddDays(-1);
+            dateTimePickerDen.MaxDate = DateTime.Now;
+        }
         public void PhanQuyen()
         {
+            //cmBoxTimKiemTheo.Items.Add("Nhân Viên");
+            cmBoxTimKiemTheo.Items.Add("Dòng Sản Phẩm");
+            cmBoxTimKiemTheo.Items.Add("Sản Phẩm");
+            cmBoxTimKiemTheo.Items.Add("Nhà Sản Xuất");
+            cmBoxTimKiemTheo.Items.Add("Hóa Đơn");
+            cmBoxTimKiemTheo.Items.Add("Khách Hàng");
             if (MaTruyCap == 3)
             {
+                //tabControlMainClient.Controls.Remove(tabNhanVien);
+                //tabControlMainClient.Controls.Remove(tabThongKe);
+                tabControlMainClient.Controls.Remove(tabCuaHang);
+                cmBoxTimKiemTheo.Items.Add("Nhân Viên");
 
             }
             if (MaTruyCap == 4)
@@ -53,6 +71,11 @@ namespace GalaxyMobile
                 tabControlMainClient.Controls.Remove(tabNhanVien);
                 tabControlMainClient.Controls.Remove(tabThongKe);
                 tabControlMainClient.Controls.Remove(tabCuaHang);
+                //cmBoxTimKiemTheo.Items.Add("Nhân Viên");
+                //cmBoxTimKiemTheo.Items.Add("Dòng Sản Phẩm");
+                //cmBoxTimKiemTheo.Items.Add("Sản Phẩm");
+                //cmBoxTimKiemTheo.Items.Add("Nhà Sản Xuất");
+                //cmBoxTimKiemTheo.Items.Add("Hóa Đơn");
             }
             lbUser.Text = User.UserName;
 
@@ -63,17 +86,136 @@ namespace GalaxyMobile
         private void btnLoadHD_Click(object sender, EventArgs e)
         {
             LoadHoaDon();
+            try {
+                string i = comboBoxLoc.SelectedItem.ToString();
+
+                if (i == "Toàn Bộ")
+                {
+                    if (checkBoxTG.Checked)
+                    {
+                        hoaDonBindingSource.DataSource = HoaDonBUS.GetAllHoaDonByMaCH_Tg(CH.MaCuaHang, dateTimePickerTu.Value, dateTimePickerDen.Value);
+                    }
+                    else
+                        LoadHoaDon();
+                }
+
+                else if (i == "Hóa Đơn Đã Thanh Toán")
+                {
+                    if (checkBoxTG.Checked)
+                    {
+                        hoaDonBindingSource.DataSource = HoaDonBUS.GetAllHoaDonByMaCH_Tg_DaThanhToan(CH.MaCuaHang, dateTimePickerTu.Value, dateTimePickerDen.Value);
+                    }
+                    else
+                        hoaDonBindingSource.DataSource = HoaDonBUS.GetAllHoaDonByMaCH_DaThanhToan(CH.MaCuaHang);
+                }
+                else if (i == "Hóa Đơn Chưa Thanh Toán")
+                {
+                    if (checkBoxTG.Checked)
+                    {
+                        hoaDonBindingSource.DataSource = HoaDonBUS.GetAllHoaDonByMaCH_Tg_ChuaThanhToan(CH.MaCuaHang, dateTimePickerTu.Value, dateTimePickerDen.Value);
+                    }
+                    else
+                        hoaDonBindingSource.DataSource = HoaDonBUS.GetAllHoaDonByMaCH_ChuaThanhToan(CH.MaCuaHang);
+                }
+                else if (i == "Hóa Đơn Đang Giao Hàng")
+                {
+                    if (checkBoxTG.Checked)
+                    {
+                        hoaDonBindingSource.DataSource = HoaDonBUS.GetAllHoaDonByMaCH_Tg_DangGiaoHang(CH.MaCuaHang, dateTimePickerTu.Value, dateTimePickerDen.Value);
+                    }
+                    else
+                        hoaDonBindingSource.DataSource = HoaDonBUS.GetAllHoaDonByMaCH_DangGiaoHang(CH.MaCuaHang);
+                }
+            }
+            catch { }
+
+
+
         }
         void LoadHoaDon()
         {
             hoaDonBindingSource.DataSource = HoaDonBUS.GetAllHoaDonByMaCH(CH.MaCuaHang);
         }
+        private void btnCTHD_Click(object sender, EventArgs e)
+        {
+            if (hoaDonBindingSource.DataSource != null)
+            {
+                frmChiTietHoaDon hd = new frmChiTietHoaDon((hoaDonBindingSource.Current as HoaDon), User.MaCuaHang, User.UserName, false);
+                hd.Show();
+                LoadHoaDon();
+            }
 
+        }
+        private void btnThemHD_Click(object sender, EventArgs e)
+        {
+            frmChiTietHoaDon hd = new frmChiTietHoaDon(null, User.MaCuaHang, User.UserName, true);
+            hd.Show();
+            LoadHoaDon();
+        }
+        private void btnXoaHD_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn xóa dòng này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+
+                try
+                {
+                    HoaDonBUS.XoaHoaDon((hoaDonBindingSource.Current as HoaDon));
+                    MessageBox.Show("Xóa Thành Công!", "Thông Báo");
+
+                    LoadHoaDon();
+                }
+                catch { MessageBox.Show("Không Thể Thực Hiện Thao Tác!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+        }
+        private void btnSuaHD_Click(object sender, EventArgs e)
+        {
+            if ((hoaDonBindingSource.Current as HoaDon) == null)
+                return;
+            if ((hoaDonBindingSource.Current as HoaDon).TinhTrang == 0)
+            {
+                frmChiTietHoaDon hd = new frmChiTietHoaDon((hoaDonBindingSource.Current as HoaDon), User.MaCuaHang, User.UserName, true);
+                hd.Show();
+            }
+            else
+            {
+                frmChiTietHoaDon hd = new frmChiTietHoaDon((hoaDonBindingSource.Current as HoaDon), User.MaCuaHang, User.UserName, false);
+                hd.Show();
+            }
+            LoadHoaDon();
+        }
         #endregion
 
         #region Kho Hang
         #endregion
-
+        #region Dong SP
+        void LoadDSP()
+        {
+            dongSanPhamBindingSource.DataSource = DongSanPhamBUS.GetAllDongSP();
+            cmBoxHSX.DataSource = HSXBUS.GetAllHSX();
+            cmBoxHSX.DisplayMember = "TenHSX";
+            cmBoxHSX.ValueMember = "MaHSX";
+            cmBoxLoaiSP.DataSource = LoaiSPBUS.GetAllLoaiSP();
+            cmBoxLoaiSP.DisplayMember = "TenLSP";
+            cmBoxLoaiSP.ValueMember = "MaLSP";
+        }
+        private void btnLoadDSP_Click(object sender, EventArgs e)
+        {
+            LoadDSP();
+        }
+        private void dgvDongSP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int r = dgvDongSP.CurrentCell.RowIndex;
+                string id = dgvDongSP.Rows[r].Cells[0].Value.ToString();
+                txtboxMaDongSP.Text = id;
+                txtboxTenDongSP.Text = dgvDongSP.Rows[r].Cells[1].Value.ToString();
+                cmBoxHSX.SelectedValue = dgvDongSP.Rows[r].Cells[2].Value.ToString();
+                cmBoxLoaiSP.SelectedValue = dgvDongSP.Rows[r].Cells[3].Value.ToString();
+            }
+            catch { }
+        }
+        #endregion
         #region San Pham
 
         private void btnLoadSP_Click(object sender, EventArgs e)
@@ -124,7 +266,7 @@ namespace GalaxyMobile
             txtMaKH.Text = dgvKH.Rows[r].Cells[0].Value.ToString();
             txtTenKH.Text = dgvKH.Rows[r].Cells[1].Value.ToString();
             txtDiaChi.Text = dgvKH.Rows[r].Cells[2].Value.ToString();
-            txtSDT.Text= dgvKH.Rows[r].Cells[3].Value.ToString();
+            txtSDT.Text = dgvKH.Rows[r].Cells[3].Value.ToString();
 
         }
 
@@ -244,6 +386,360 @@ namespace GalaxyMobile
             btnLuu.Enabled = false;
             btnHuy.Enabled = false;
             panel.Enabled = false;
+        }
+
+        private void btnChiTietSP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int r = dgvSP.CurrentCell.RowIndex;
+                string id = dgvSP.Rows[r].Cells[0].Value.ToString();
+                frmChiTietSanPham ctsp = new frmChiTietSanPham(id, User.MaCuaHang, null, false);
+                ctsp.ShowDialog();
+            }
+            catch { }
+        }
+
+        private void dgvHSX_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnLoadHSX_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                hSXBindingSource.DataSource = HSXBUS.GetAllHSX();
+            }
+            catch { }
+        }
+
+        private void btnDongSearch_Click(object sender, EventArgs e)
+        {
+            txtboxTimKiem.Text = "";
+        }
+
+        private void cmBoxTimKiemTheo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtboxTimKiem.Text = "";
+        }
+
+        private void txtboxTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            try {
+                string i = cmBoxTimKiemTheo.SelectedItem.ToString();
+
+                if (i == "Dòng Sản Phẩm")
+                {
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[2];
+                    dongSanPhamBindingSource.DataSource = DongSanPhamBUS.TimKiemDongSP(txtboxTimKiem.Text);
+                }
+                //else
+                //    if (i == "Nhân Viên")
+                //{
+                //    if (MaTruyCap == 2)
+                //        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[0];
+                //    else
+                //        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[4];
+                //    nhanVienBindingSource.DataSource = NhanVienBUS.TimKiemNV(txtboxTimKiem.Text);
+                //}
+                else if (i == "Sản Phẩm")
+                {
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[1];
+                    sanPhamBindingSource.DataSource = SanPhamBUS.TimKiemSP(txtboxTimKiem.Text);
+                }
+                else if (i == "Khách Hàng")
+                {
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[1];
+                    if (MaTruyCap == 3)
+
+                        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[6];
+                    else
+                        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[4];
+                    khachHangBindingSource.DataSource = KHBUS.TimKiemKhachHang(txtboxTimKiem.Text);
+                }
+                else if (i == "Nhà Sản Xuất")
+                {
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[3];
+                    hSXBindingSource.DataSource = HSXBUS.TimKiemHSX(txtboxTimKiem.Text);
+                }
+                else if (i == "Hóa Đơn")
+                {
+
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[0];
+
+                    hoaDonBindingSource.DataSource = HoaDonBUS.TimKiemHD(txtboxTimKiem.Text);
+                }
+            }
+            catch { MessageBox.Show("Bạn Chưa Chọn Đối Tượng Tìm Kiếm!"); }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string i = cmBoxTimKiemTheo.SelectedItem.ToString();
+
+            if (i == "Dòng Sản Phẩm")
+            {
+                tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[2];
+                dongSanPhamBindingSource.DataSource = DongSanPhamBUS.TimKiemDongSP(txtboxTimKiem.Text);
+            }
+            //else
+            //    if (i == "Nhân Viên")
+            //{
+            //    if (MaTruyCap == 2)
+            //        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[0];
+            //    else
+            //        tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[4];
+            //    nhanVienBindingSource.DataSource = NhanVienBUS.TimKiemNV(txtboxTimKiem.Text);
+            //}
+            else if (i == "Sản Phẩm")
+            {
+                tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[1];
+                sanPhamBindingSource.DataSource = SanPhamBUS.TimKiemSP(txtboxTimKiem.Text);
+            }
+            else if (i == "Khách Hàng")
+            {
+                tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[1];
+                if (MaTruyCap == 3)
+
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[6];
+                else
+                    tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[4];
+                khachHangBindingSource.DataSource = KHBUS.TimKiemKhachHang(txtboxTimKiem.Text);
+            }
+            else if (i == "Nhà Sản Xuất")
+            {
+                tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[3];
+                hSXBindingSource.DataSource = HSXBUS.TimKiemHSX(txtboxTimKiem.Text);
+            }
+            else if (i == "Hóa Đơn")
+            {
+
+                tabControlMainClient.SelectedTab = tabControlMainClient.TabPages[0];
+
+                hoaDonBindingSource.DataSource = HoaDonBUS.TimKiemHD(txtboxTimKiem.Text);
+            }
+        }
+
+        private void dateTimePickerTu_ValueChanged(object sender, EventArgs e)
+        {
+            //if(dateTimePickerTu.Value>=dateTimePickerDen.Value)
+            //{
+            //    dateTimePickerTu.
+            //}
+        }
+
+        private void checkBoxTG_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxTG.Checked == true)
+            {
+                pnlTG.Visible = true;
+            }
+            else
+                pnlTG.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //int r = dgvHD.CurrentCell.RowIndex;
+
+            frmInHoaDon frm2 = new frmInHoaDon("hd0002", "cs2");
+            frm2.ShowDialog();
+            ////dgvHD.DataSource = HoaDonBUS.InHD("hd0002", "cs2");
+        }
+
+        private void tabControlMainClient_Selected(object sender, TabControlEventArgs e)
+        {
+
+            //chart1.DataSource = thongkea.getProductSale(User.MaCuaHang);
+            //chart1.ChartAreas[0].AxisY.Title = "Số lượng";
+            //chart1.ChartAreas[0].AxisX.Title = "Tên sản phẩm";
+            //chart1.Series["Số lượng"].XValueMember = "TenSP";
+            //chart1.Series["Số lượng"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            //chart1.Series["Số lượng"].YValueMembers = "SoLuong";
+            //chart1.Series["Số lượng"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+        }
+
+        private void btnloadtksp_Click(object sender, EventArgs e)
+        {
+            string id = User.MaCuaHang;
+            try
+            {
+                string i = comboBoxTKTheoThoiGian.SelectedItem.ToString();
+
+                if (i == "Trong ngày")
+                {
+
+                    chart1.DataSource = thongkea.SPBanTrongNgay(id, dateTimePickerTrongNgay.Value);
+                }
+                else
+                    if (i == "Theo tháng")
+                {
+                    try
+                    {
+
+                        DateTime date = new DateTime(dateTimePickerTheoThang.Value.Year, dateTimePickerTheoThang.Value.Month, 1);
+
+                        chart1.DataSource = thongkea.SPBanTheoTG(id, date, date.AddMonths(1).AddDays(-1));
+                    }
+                    catch { }
+                }
+
+                else if (i == "Trong quý")
+                {
+
+                    string ids = comboBoxQuy.SelectedItem.ToString();
+                    if (ids == null)
+                        return;
+                    if (ids == "Quý I")
+                    {
+                        DateTime date1 = new DateTime(dateTimePickerNam.Value.Year, 1, 1);
+                        DateTime date2 = new DateTime(dateTimePickerNam.Value.Year, 3, 31);
+                        chart1.DataSource = thongkea.SPBanTheoTG(id, date1, date2);
+                    }
+                    else
+                        if (ids == "Quý II")
+                    {
+                        DateTime date1 = new DateTime(dateTimePickerNam.Value.Year, 4, 1);
+                        DateTime date2 = new DateTime(dateTimePickerNam.Value.Year, 6, 30);
+                        chart1.DataSource = thongkea.SPBanTheoTG(id, date1, date2);
+                    }
+                    else
+                        if (ids == "Quý III")
+                    {
+                        DateTime date1 = new DateTime(dateTimePickerNam.Value.Year, 7, 1);
+                        DateTime date2 = new DateTime(dateTimePickerNam.Value.Year, 9, 30);
+                        chart1.DataSource = thongkea.SPBanTheoTG(id, date1, date2);
+                    }
+                    else
+                        if (ids == "Quý VI")
+                    {
+                        DateTime date1 = new DateTime(dateTimePickerNam.Value.Year, 10, 1);
+                        DateTime date2 = new DateTime(dateTimePickerNam.Value.Year, 12, 31);
+                        chart1.DataSource = thongkea.SPBanTheoTG(id, date1, date2);
+                    }
+
+                }
+
+            }
+            catch { MessageBox.Show("Bạn Chưa Chọn Đối Tượng Tìm Kiếm!"); return; }
+
+            chart1.ChartAreas[0].AxisY.Title = "Số lượng";
+            chart1.ChartAreas[0].AxisX.Title = "Tên sản phẩm";
+            chart1.Series["Số lượng"].XValueMember = "TenSP";
+            chart1.Series["Số lượng"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            chart1.Series["Số lượng"].YValueMembers = "SoLuong";
+            chart1.Series["Số lượng"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+        }
+
+        private void comboBoxTKTheoThoiGian_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string i = comboBoxTKTheoThoiGian.SelectedItem.ToString();
+
+                if (i == "Trong ngày")
+                {
+                    dateTimePickerTrongNgay.Visible = true;
+                    dateTimePickerNam.Visible = false;
+                    dateTimePickerTheoThang.Visible = false;
+                    comboBoxQuy.Visible = false;
+
+                }
+                else
+                    if (i == "Theo tháng")
+                {
+                    dateTimePickerTrongNgay.Visible = false;
+                    dateTimePickerNam.Visible = false;
+                    dateTimePickerTheoThang.Visible = true;
+                    comboBoxQuy.Visible = false;
+                    DateTime d = new DateTime(dateTimePickerTheoThang.Value.Year, dateTimePickerTheoThang.Value.Month, 1);
+                    dateTimePickerTheoThang.Value = d;
+
+                }
+
+                else if (i == "Trong quý")
+                {
+                    dateTimePickerTrongNgay.Visible = false;
+                    dateTimePickerNam.Visible = true;
+                    dateTimePickerTheoThang.Visible = false;
+                    comboBoxQuy.Visible = true;
+
+
+                }
+            }
+            catch { }
+        }
+
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cboCH.DataSource = CuaHangBUS.GetAllCuaHang();
+            cboCH.DisplayMember = "TenCuaHang";
+            cboCH.ValueMember = "MaCuaHang";
+            cboLoaiNV.DataSource = LoaiNvBUS.GetLNV();
+            cboLoaiNV.DisplayMember = "TenLoaiNV";
+            cboLoaiNV.ValueMember = "MaLoaiNV";
+
+            // Lấy thứ tự record hiện hành 
+            int r = dgvNhanVien.CurrentCell.RowIndex;
+            txtMaNV.Text = dgvNhanVien.Rows[r].Cells[0].Value.ToString();
+            cboCH.SelectedValue = dgvNhanVien.Rows[r].Cells[1].Value.ToString();
+            cboLoaiNV.SelectedValue = dgvNhanVien.Rows[r].Cells[2].Value.ToString();
+            txtTenNV.Text = dgvNhanVien.Rows[r].Cells[3].Value.ToString();
+            cboSex.Text = dgvNhanVien.Rows[r].Cells[4].Value.ToString();
+            try
+            {
+                txtDiaChi.Text = dgvNhanVien.Rows[r].Cells[5].Value.ToString();
+            }
+            catch { txtDiaChi.Text = " "; }
+
+            try
+            {
+                txtSDT.Text = dgvNhanVien.Rows[r].Cells[6].Value.ToString();
+            }
+            catch
+            {
+
+                txtSDT.Text = " ";
+            }
+            try
+            {
+                txtLuong.Text = dgvNhanVien.Rows[r].Cells[7].Value.ToString();
+            }
+            catch
+            {
+
+                txtLuong.Text = " ";
+            }
+
+        }
+        public void LoadNV()
+        {
+            nhanVienBindingSource.DataSource = NhanVienBUS.GetallNV(User.MaCuaHang);
+            dgvNhanVien_CellClick(null, null);
+            // Xóa trống các đối tượng trong Panel 
+            txtMaNV.ResetText();
+            txtTenNV.ResetText();
+            txtSDT.ResetText();
+            cboLoaiNV.ResetText();
+            cboSex.ResetText();
+            txtDiaChi.ResetText();
+            txtLuong.ResetText();
+            cboCH.ResetText();
+            // Không cho thao tác trên các nút Lưu / Hủy 
+            btnLuu.Enabled = false;
+            btnHuy.Enabled = false;
+            panel.Enabled = false;
+            btnLNV.Enabled = true;
+            // Cho thao tác trên các nút Thêm / Sửa / Xóa / Thoát 
+            btnThem.Enabled = true;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoadNV();
+            dgvNhanVien_CellClick(null, null);
         }
     }
 }

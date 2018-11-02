@@ -15,6 +15,13 @@ namespace DAO
                 return db.USP_GetAllCuaHang().ToList();
             }
         }
+        public List<CuaHang> GetCuaHangChiNhanh()
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                return db.CuaHangs.Where(p => p.MaCuaHang != "ts").ToList();
+            }
+        }
         public KhoHang GetMaKieuByMaCH(string id,string makieu)
         {
             using (GalaxyMobileEntities db = new GalaxyMobileEntities())
@@ -27,6 +34,32 @@ namespace DAO
             using (GalaxyMobileEntities db = new GalaxyMobileEntities())
             {
                 return db.CuaHangs.Where(p => p.MaCuaHang == mach).SingleOrDefault();
+            }
+        }
+        public void ThemCH(CuaHang ch)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                db.CuaHangs.Add(ch);
+                db.SaveChanges();
+            }
+        }
+        public void XoaCH(CuaHang ch)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                db.CuaHangs.Attach(ch);
+                db.CuaHangs.Remove(ch);
+                db.SaveChanges();
+            }
+        }
+        public void SuaCH(CuaHang ch)
+        {
+            using (GalaxyMobileEntities db = new GalaxyMobileEntities())
+            {
+                db.CuaHangs.Attach(ch);
+                db.Entry(ch).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
             }
         }
     }

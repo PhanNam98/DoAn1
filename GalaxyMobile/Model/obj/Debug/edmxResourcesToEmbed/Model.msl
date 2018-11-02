@@ -213,5 +213,75 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_GETAllInfoSP" FunctionName="GalaxyMobileModel.Store.USP_GETAllInfoSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalaxyMobileModel.USP_GETAllInfoSP_Result">
+          <ScalarProperty Name="MaLSP" ColumnName="MaLSP" />
+          <ScalarProperty Name="MaDSP" ColumnName="MaDSP" />
+          <ScalarProperty Name="MaHSX" ColumnName="MaHSX" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
+          <ScalarProperty Name="SoluongSP" ColumnName="SoluongSP" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_GETAllInfoSPNew" FunctionName="GalaxyMobileModel.Store.USP_GETAllInfoSPNew">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalaxyMobileModel.USP_GETAllInfoSPNew_Result">
+          <ScalarProperty Name="TenLSP" ColumnName="TenLSP" />
+          <ScalarProperty Name="TenDong" ColumnName="TenDong" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+          <ScalarProperty Name="MaKieu" ColumnName="MaKieu" />
+          <ScalarProperty Name="SoluongSP" ColumnName="SoluongSP" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="TenHSX" ColumnName="TenHSX" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_DeleteCTSP" FunctionName="GalaxyMobileModel.Store.USP_DeleteCTSP" />
+    <FunctionImportMapping FunctionImportName="USP_ThayDoiGiaChiTietSP" FunctionName="GalaxyMobileModel.Store.USP_ThayDoiGiaChiTietSP" />
+    <FunctionImportMapping FunctionImportName="USP_ThayDoiSoLuongChiTietSP" FunctionName="GalaxyMobileModel.Store.USP_ThayDoiSoLuongChiTietSP" />
+    <FunctionImportMapping FunctionImportName="USP_GetCTSPOderByMaCHByMaKieu" FunctionName="GalaxyMobileModel.Store.USP_GetCTSPOderByMaCHByMaKieu" />
+    <FunctionImportMapping FunctionImportName="USP_GetCTSPOderByMaCHByMaSP" FunctionName="GalaxyMobileModel.Store.USP_GetCTSPOderByMaCHByMaSP" />
+    <FunctionImportMapping FunctionImportName="USP_PhanChiaSP" FunctionName="GalaxyMobileModel.Store.USP_PhanChiaSP" />
+    <FunctionImportMapping FunctionImportName="USP_ThemSL_KhoHangByMaKieuByMaCH" FunctionName="GalaxyMobileModel.Store.USP_ThemSL_KhoHangByMaKieuByMaCH" />
+    <FunctionImportMapping FunctionImportName="USP_ThayDoiSLChiTietHoaDon" FunctionName="GalaxyMobileModel.Store.USP_ThayDoiSLChiTietHoaDon" />
+    <FunctionImportMapping FunctionImportName="InHoaDon" FunctionName="GalaxyMobileModel.Store.InHoaDon">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalaxyMobileModel.InHoaDon_Result">
+          <ScalarProperty Name="Giá" ColumnName="Giá" />
+          <ScalarProperty Name="Mã_Sản_Phẩm" ColumnName="Mã Sản Phẩm" />
+          <ScalarProperty Name="Tên_Sản_Phẩm" ColumnName="Tên Sản Phẩm" />
+          <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
+          <ScalarProperty Name="Số_Lượng_Mua" ColumnName="Số Lượng Mua" />
+          <ScalarProperty Name="Tổng_Tiền" ColumnName="Tổng Tiền" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spSPBanDuoc" FunctionName="GalaxyMobileModel.Store.spSPBanDuoc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalaxyMobileModel.spSPBanDuoc_Result">
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spSPBanDuocTheoThoiGian" FunctionName="GalaxyMobileModel.Store.spSPBanDuocTheoThoiGian">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalaxyMobileModel.spSPBanDuocTheoThoiGian_Result">
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spSPBanDuocTrongNgay" FunctionName="GalaxyMobileModel.Store.spSPBanDuocTrongNgay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GalaxyMobileModel.spSPBanDuocTrongNgay_Result">
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -388,6 +388,10 @@
     <Parameter Name="manv" Type="varchar" Mode="In" />
   </Function>
   <Function Name="GetLNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="InHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idhd" Type="varchar" Mode="In" />
+    <Parameter Name="idch" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="spDelKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ma" Type="varchar" Mode="In" />
   </Function>
@@ -397,6 +401,18 @@
     <Parameter Name="ten" Type="nvarchar" Mode="In" />
     <Parameter Name="diachi" Type="nvarchar" Mode="In" />
     <Parameter Name="sdt" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spSPBanDuoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ten" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spSPBanDuocTheoThoiGian" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ten" Type="varchar" Mode="In" />
+    <Parameter Name="date" Type="date" Mode="In" />
+    <Parameter Name="date2" Type="date" Mode="In" />
+  </Function>
+  <Function Name="spSPBanDuocTrongNgay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ten" Type="varchar" Mode="In" />
+    <Parameter Name="date" Type="date" Mode="In" />
   </Function>
   <Function Name="spThemNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="manv" Type="varchar" Mode="In" />
@@ -424,8 +440,50 @@
     <Parameter Name="sdt" Type="varchar" Mode="In" />
     <Parameter Name="luong" Type="decimal" Mode="In" />
   </Function>
+  <Function Name="USP_DeleteCTSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="USP_GetAllCuaHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="USP_GETAllInfoSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="USP_GETAllInfoSPNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
   <Function Name="USP_GetAllKhoHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="USP_GetCTSPOderByMaCHByMaKieu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idch" Type="varchar" Mode="In" />
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="USP_GetCTSPOderByMaCHByMaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idch" Type="varchar" Mode="In" />
+    <Parameter Name="id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="USP_PhanChiaSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="idNhap" Type="varchar" Mode="In" />
+    <Parameter Name="idPP" Type="varchar" Mode="In" />
+    <Parameter Name="SL" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_ThayDoiGiaChiTietSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="Gia" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="USP_ThayDoiSLChiTietHoaDon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idhd" Type="varchar" Mode="In" />
+    <Parameter Name="idch" Type="varchar" Mode="In" />
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="SL" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_ThayDoiSoLuongChiTietSP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="sl" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_ThemSL_KhoHangByMaKieuByMaCH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="varchar" Mode="In" />
+    <Parameter Name="idCH" Type="varchar" Mode="In" />
+    <Parameter Name="SL" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="GalaxyMobileModelStoreContainer">
     <EntitySet Name="ChiTietHDNhapHang" EntityType="Self.ChiTietHDNhapHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ChiTietHoaDon" EntityType="Self.ChiTietHoaDon" Schema="dbo" store:Type="Tables" />
